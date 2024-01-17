@@ -1,0 +1,7 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "nvim_lsp",
+        "cmp"
+    ]
+}

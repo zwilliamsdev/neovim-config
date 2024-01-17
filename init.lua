@@ -19,11 +19,3 @@ require("vim-options")
 
 -- Load Plugins
 require("lazy").setup("plugins")
-
--- Treesitter Config
-local config = require("nvim-treesitter.configs")
-config.setup({
-  ensure_installed = { "lua" },
-  highlight = { enable = true },
-  indent = { enable = true }, 
-})

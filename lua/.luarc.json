@@ -1,6 +1,7 @@
 {
     "diagnostics.globals": [
         "vim",
-        "nvim_lsp"
+        "nvim_lsp",
+        "cmp"
     ]
 }

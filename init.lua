@@ -3,6 +3,8 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+-- ColorColumn
+vim.cmd("set colorcolumn=80")
 
 -- Relative line numbers
 vim.opt.number = true
@@ -42,6 +44,15 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate"
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+  },
 }
 
 local opts = {}
@@ -58,9 +69,13 @@ config.setup({
 
 -- Leader
 vim.g.mapleader = " "
+ 
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- Neotree
+vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')

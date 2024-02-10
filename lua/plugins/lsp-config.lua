@@ -10,8 +10,14 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
+          -- Lua
           "lua_ls",
-        }
+          -- Go
+          "gopls",
+          -- Python
+          "pyright",
+        },
+        automatic_installation = true,
       })
     end
   },

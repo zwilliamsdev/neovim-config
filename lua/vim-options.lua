@@ -12,3 +12,7 @@ vim.opt.relativenumber = true
 
 -- Leader
 vim.g.mapleader = " "
+
+-- Mappings
+vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message"})
+vim.keymap.set("n", "<leader>nm", "<cmd>Telescope noice<CR>", { desc = "Dismiss Noice Message"})
